@@ -1,0 +1,47 @@
+GET: Untuk mendapatkan data
+POST: Untuk mengcreate data baru
+PUT: Untuk update data 
+PATCH: Untuk update data
+DELET: Untuk hapus data di database
+
+perbedaan PUT dan PATCH:
+    -kalo PUT mengganti semua data 
+    -kalo PATCH hanya satu yang terganti
+
+untuk create data gunakan http method POST
+
+
+SINTAKS DASAT EXPRESS
+import express
+const express = require('express');
+
+inisialisasi express
+const app = express();
+
+method yang bisa menggunakan semua permintaan http method (middleware)
+app.use("/", (req, res, next) => {
+    res.send('hello ini use');
+})
+
+jalankan ini pada postman
+perintah url http://localhost:4000/
+app.get("/", (req, res) => {
+    json: memberikan sebuah data berbentuk json
+    res.json({
+        nama: 'khairul',
+        email: 'kk@gmail.com'
+    });
+})
+
+jalankan ini pada postman
+perintah url http://localhost:4000/
+app.post("/", (req, res) => {
+    res: memberikan respon / kirim data atau pesan kepada client
+    res.send('hello ini post')
+})
+
+jalankan perintah ini pada terminal
+dengan perintah npm start
+app.listen(4000, () => {
+    console.log('berhasil 4000');
+})
