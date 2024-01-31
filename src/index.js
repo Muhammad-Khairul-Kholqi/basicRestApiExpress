@@ -2,8 +2,12 @@
 const express = require('express');
 // memanggil code dari file users.js
 const usersRoutes = require('../routes/users');
+// memanggil code dari log.js
+const middlewareLogRequest = require('../middleware/log')
 
 const app = express();
+
+app.use(middlewareLogRequest);
 
 app.use('/users', usersRoutes);
 

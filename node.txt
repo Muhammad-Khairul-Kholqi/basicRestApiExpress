@@ -4,6 +4,8 @@ PUT: Untuk update data
 PATCH: Untuk update data
 DELET: Untuk hapus data di database
 
+Middleware: adalah sebuah fungsi yang bisa akses respon (bisa menjalankan fungsi yang di inginkan)
+
 perbedaan PUT dan PATCH:
     -kalo PUT mengganti semua data 
     -kalo PATCH hanya satu yang terganti
@@ -11,7 +13,7 @@ perbedaan PUT dan PATCH:
 untuk create data gunakan http method POST
 
 
-SINTAKS DASAT EXPRESS
+SINTAKS DASAR EXPRESS
 import express
 const express = require('express');
 
