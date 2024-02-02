@@ -2,9 +2,17 @@ const UsersModel = require('../models/users')
 // function create
 const createNewUser = async (req, res) => {
     const {body} = req;
+
+    if(!body.name || !body.email || !body.address) {
+        return res.status(400).json({
+            message: 'anda mengiirim data yang salah',
+            data: null
+        })
+    }
+
     try {
         await UsersModel.createNewUser(body);
-        res.json({
+        res.status(201).json({
             message: 'Create new users success',
             data: req.body
         })
